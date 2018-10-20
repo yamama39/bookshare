@@ -8,4 +8,8 @@ delete "logout" ,to: "sessions#destroy"
 
 get "signup" , to: "users#new"
 resources:users, only: [:show, :new, :create]
+
+resources:books, only: [:show, :new]
+resources:likes, only: [:create, :destroy]
+resources:reviews, only: [:new, :create, :destroy]
 end

@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-1">
+        <div class="book">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">
+                    <img src="<%= @book.image_url %>" alt="">
+                </div>
+                <div class="panel-body">
+                    <p class="book-title"><%= @book.title %></p>
+                    <div class="buttons text-center">
+                        <% if logged_in? %>
+                            <%= render "likes/like_button", book: @book %>
+                        <% end %>
+                        <%= link_to "この本からの別の本をおすすめ", new_book_path(base_book_id: @book.id) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="book-show">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">
+                    本の情報
+                </div>
+                <div class="panel-body">
+                    <p> author :<%= @book.author %> </p>
+                    <p> publisher-name :<%= @book.publisher_name %> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 col-sm-6 col-xs-12 col-md-offset-2">
+        <div class="review">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">レビュー</div>
+                <div class="panel-body">
+                    レビュー
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 col-sm-6 col-xs-12 col-md-offset-1">
+        <div class="recommend">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">レコメンド</div>
+                <div class="panel-body">
+                    レコメンド
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
